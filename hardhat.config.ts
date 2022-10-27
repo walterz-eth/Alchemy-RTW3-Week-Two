@@ -1,5 +1,7 @@
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
+import * as dotenv from 'dotenv'
+dotenv.config()
 
 const config: HardhatUserConfig = {
   solidity: "0.8.17",
@@ -12,10 +14,16 @@ module.exports = {
   networks: {
     hardhat: {
     },
-    /*rinkeby: {
-      url: "https://eth-rinkeby.alchemyapi.io/v2/123abc123abc123abc123abc123abcde",
-      accounts: "remote", // Using node's accounts  
-    },*/
+    goerli: {
+      url: process.env.GOERLI_URL,
+      //accounts: "remote", // Using node's accounts  
+      accounts: {
+        mnemonic: process.env.PRIVATE_KEY,
+        path: "",
+        initialIndex: 0,
+        count: 10
+      }
+    },
     ganache: {
 	    url: "http://127.0.0.1:8545",
       accounts: "remote", // Using node's accounts
