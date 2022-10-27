@@ -3,7 +3,7 @@
 // contracts/BuyMeACoffee.sol
 pragma solidity ^0.8.0;
 
-// Example Contract Address on Goerli: 0x
+// Example Contract Address on Goerli: 0xa15b4D982766D62291f850a22194349bfe2BF941
 
 contract BuyMeACoffee {
     // Event to emit when a Memo is created.
